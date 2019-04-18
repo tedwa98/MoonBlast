@@ -17,15 +17,18 @@ public class MusicPlayer {
     private String musicFilename = "loopable_music.wav";
     private String shootFilename = "Laser_Shoot2.wav";
     private String explosionFilename = "Explosion.wav";
+    private String blipSound = "Blip_Select.wav";
     private AudioClip music; 
     private AudioClip shoot;
     private AudioClip explosion;
+    private AudioClip blip;
     private boolean isPlaying;
     
     public MusicPlayer(){
         this.music = new AudioClip(new File(musicFilename).toURI().toString());
         this.explosion = new AudioClip(new File(explosionFilename).toURI().toString());
         this.shoot = new AudioClip(new File(shootFilename).toURI().toString());
+        this.blip = new AudioClip(new File(blipSound).toURI().toString());
         this.isPlaying = true;
         music.setCycleCount(AudioClip.INDEFINITE);
         playMusic();
@@ -67,4 +70,13 @@ public class MusicPlayer {
         explosion.stop();
         explosion.play();
     }
+    
+    /**
+     * Plays blip sound
+     */
+    public void playBlip(){
+        blip.stop();
+        blip.play();
+    }
+    
 }
