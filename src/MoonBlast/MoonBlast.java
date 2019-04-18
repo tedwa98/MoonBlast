@@ -67,6 +67,7 @@ public class MoonBlast extends Application{
         sT.play();
         rT.play();
         
+        //Needs to be changed based on position on screen
         imageView.setX(50); 
         imageView.setY(25); 
       
